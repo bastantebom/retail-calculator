@@ -18,6 +18,7 @@ type Region = {
 };
 
 export const Regions: Array<Region> = [
+  { code: "", name: "Choose region", taxRate: 0 },
   { code: "AUK", name: "Auckland", taxRate: 0.0685 },
   { code: "WLG", name: "Wellington", taxRate: 0.08 },
   { code: "WAI", name: "Waikato", taxRate: 0.0625 },
