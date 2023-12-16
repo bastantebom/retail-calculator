@@ -8,7 +8,7 @@ export type ItemPriceProps = {
 export const ItemPrice: FC<ItemPriceProps> = ({ price, onPriceChange }) => {
   return (
     <div>
-      <label>Quantity</label>
+      <label>Price</label>
       <div className="flex items-center">
         <input
           name="itemPrice"
