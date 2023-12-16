@@ -1,10 +1,16 @@
-import { Quantity } from "./component/Quantity";
+import { useState } from "react";
+import { Quantity, ItemPrice } from "./component";
 import "./css/retail-calculator.css";
 
 function RetailCalculator() {
+  const [price, setPrice] = useState(0);
   const handleQuantityChange = (increment: boolean) => {
     if (increment) console.log("increment");
     else console.log("decrement");
+  };
+
+  const handlePriceChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setPrice(Number(e.currentTarget.value));
   };
 
   return (
@@ -12,10 +18,12 @@ function RetailCalculator() {
       <div>
         <div className="form">
           <h1>Form</h1>
-          <Quantity quantity={0} quantityChange={handleQuantityChange} />
+          <Quantity quantity={0} onQuantityChange={handleQuantityChange} />
+          <ItemPrice price={price} onPriceChange={handlePriceChange} />
         </div>
+        <hr />
         <div className="details">
-          <h1>Details</h1>
+          <h1>Summary</h1>
         </div>
       </div>
     </>
