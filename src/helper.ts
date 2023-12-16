@@ -25,3 +25,14 @@ export const Regions: Array<Region> = [
   { code: "CHC", name: "Christchurch", taxRate: 0.04 },
   { code: "TAS", name: "Tasman", taxRate: 0.0825 },
 ];
+
+export type SummaryDetails = {
+  quantity: number;
+  amount: number;
+  subtotal: number;
+  discountRate: string;
+  discountedAmount: number;
+  regionTaxRate: string;
+  regionTaxedAmount: number;
+  total: number;
+};
