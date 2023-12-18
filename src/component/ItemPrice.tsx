@@ -12,9 +12,11 @@ export const ItemPrice: FC<ItemPriceProps> = ({ price, onPriceChange }) => {
       <div className="flex items-center">
         <input
           name="itemPrice"
-          type="text"
+          type="number"
           value={price}
           onChange={onPriceChange}
+          className="text-center border p-2"
+          step="any"
         />
       </div>
     </div>

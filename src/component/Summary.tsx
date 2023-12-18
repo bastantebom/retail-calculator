@@ -2,10 +2,11 @@ import type { FC } from "react";
 import { SummaryDetails } from "../helper";
 
 export type SummaryProps = {
-  summaryDetails: SummaryDetails;
+  summaryDetails: SummaryDetails | null;
 };
 
 export const Summary: FC<SummaryProps> = ({ summaryDetails }) => {
+  if (!summaryDetails) return null;
   return (
     <div>
       <div className="flex item-center">

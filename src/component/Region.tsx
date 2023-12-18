@@ -16,9 +16,11 @@ export const Region: FC<RegionProps> = ({ code, onRegionChange }) => {
   return (
     <div>
       <label>Region</label>
-      <select value={code} onChange={onRegionChange}>
-        {regions}
-      </select>
+      <div className="flex">
+        <select value={code} onChange={onRegionChange} className="border p-2">
+          {regions}
+        </select>
+      </div>
     </div>
   );
 };
