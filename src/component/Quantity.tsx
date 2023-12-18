@@ -2,7 +2,7 @@ import type { FC } from "react";
 
 export type QuantityProps = {
   quantity: number;
-  onQuantityChange: (increment: boolean) => void;
+  onQuantityChange: (e: React.FormEvent<HTMLInputElement>) => void;
 };
 
 export const Quantity: FC<QuantityProps> = ({ quantity, onQuantityChange }) => {
@@ -10,15 +10,19 @@ export const Quantity: FC<QuantityProps> = ({ quantity, onQuantityChange }) => {
     <div>
       <label>Quantity</label>
       <div className="flex items-center">
-        <button onClick={() => onQuantityChange(false)}>&mdash;</button>
+        {/* <button onClick={() => onQuantityChange(false)} className="p-2 border">
+          &mdash;
+        </button> */}
         <input
           name="quantity"
-          className=""
-          type="text"
+          className="text-center border p-2"
+          type="number"
           value={quantity}
-          readOnly
+          onChange={onQuantityChange}
         />
-        <button onClick={() => onQuantityChange(true)}>&#xff0b;</button>
+        {/* <button onClick={() => onQuantityChange(true)} className="p-2 border">
+          &#xff0b;
+        </button> */}
       </div>
     </div>
   );
